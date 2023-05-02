@@ -1,0 +1,53 @@
+﻿@page "/earnings"
+
+@inherits LayoutComponentBase
+
+<MudAppBar Dense="true" Elevation="4">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" />
+    <MudText Typo="Typo.h6">Earnings Dashboard</MudText>
+</MudAppBar>
+
+<MudContainer Class="mt-4">
+    <MudGrid Container="true" Spacing="2">
+        <MudItem xs="12" md="6" lg="4" xl="3">
+            <MudPaper Elevation="4" Class="p-3 text-center">
+                <MudIcon Icon="@Icons.Material.Filled.AttachMoney" Size="Size.Large" Class="mb-3" />
+                <MudTypography Variant="Variant.h6" Class="mb-1">Total Earnings</MudTypography>
+                <MudTypography Variant="Variant.h4" Class="mb-3">$@totalEarnings</MudTypography>
+                <MudButton Color="Color.Secondary">View Details</MudButton>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="6" lg="4" xl="3">
+            <MudPaper Elevation="4" Class="p-3 text-center">
+                <MudIcon Icon="@Icons.Material.Filled.DateRange" Size="Size.Large" Class="mb-3" />
+                <MudTypography Variant="Variant.h6" Class="mb-1">This Month's Earnings</MudTypography>
+                <MudTypography Variant="Variant.h4" Class="mb-3">$@thisMonthEarnings</MudTypography>
+                <MudButton Color="Color.Secondary">View Details</MudButton>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="6" lg="4" xl="3">
+            <MudPaper Elevation="4" Class="p-3 text-center">
+                <MudIcon Icon="@Icons.Material.Filled.CalendarToday" Size="Size.Large" Class="mb-3" />
+                <MudTypography Variant="Variant.h6" Class="mb-1">Today's Earnings</MudTypography>
+                <MudTypography Variant="Variant.h4" Class="mb-3">$@todaysEarnings</MudTypography>
+                <MudButton Color="Color.Secondary">View Details</MudButton>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="6" lg="4" xl="3">
+            <MudPaper Elevation="4" Class="p-3 text-center">
+                <MudIcon Icon="@Icons.Material.Filled.TrendingUp" Size="Size.Large" Class="mb-3" />
+                <MudTypography Variant="Variant.h6" Class="mb-1">Earnings Growth</MudTypography>
+                <MudTypography Variant="Variant.h4" Class="mb-3">+@growthRate</MudTypography>
+                <MudButton Color="Color.Secondary">View Details</MudButton>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code {
+   
+    private decimal totalEarnings = 2350.50m;
+    private decimal thisMonthEarnings = 1050.25m;
+    private decimal todaysEarnings = 40.75m;
+    private decimal growthRate = 12.5m;
+}
